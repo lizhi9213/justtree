@@ -1,19 +1,18 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
+function hex2ArrayBuffer(hexStr) {
+  var length = hexStr.length/2;
+  let buffer = new ArrayBuffer(length);
+  let dataView = new DataView(buffer);
+  var system = 16;
+  var hexStrArr = hexStr.split("");
+  for (var i = 0; i < length; i++) {
+    var perByte = hexStrArr[i * 2] + hexStrArr[i * 2 + 1];
+    dataView.setUint8(i, parseInt(perByte, system));
+  }
 
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
+  return buffer;
 }
 
 module.exports = {
-  formatTime: formatTime
+  hex2ArrayBuffer: hex2ArrayBuffer
 }
+

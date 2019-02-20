@@ -1,0 +1,13 @@
+.lsit{
+  /* background-color:#fff;width: 100%; text-align:left; margin: 50px; */
+  margin-top:15px;
+}
+.lodgeunit{width:90%;background-color:#fff;margin:0px 0px 10px 10px;padding:0px 0px 15px 15px;}
+.hide{display:none}
+.show{display: block}
+.house{width:90%; border-bottom: 3px solid #F0F0F0;padding-top: 20px}
+.show .room{margin: 10px; width:83%; border-bottom: 1px solid #F0F0F0}
+.button-open{float:right;position:relative;bottom: 15px;background-color: #B2D693;}
+.open{background-color: #444444;}
+.versions{float:left;position:fixed;left: 20px;bottom: 10px;}
+

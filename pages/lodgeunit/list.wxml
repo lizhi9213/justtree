@@ -1,0 +1,20 @@
+<view class='lsit'>
+    <view class='lodgeunit'  wx:for="{{list}}" wx:key="navItems">
+        <view class='house'>
+            <view data-id="{{item.propertyId}}" catchtap="open">{{item.propertyNumber}}</view>
+            <button  class='button-open' id="{{item.mac}}" data-id="{{item.propertyId}}" data-taskCmd="{{item.task.cmd}}" data-taskStartTime="{{item.task.startTime}}" data-taskEndTime="{{item.task.endTime}}" size="mini" hover-stay-time="1000" catchtap="openDoor" wx:if="{{item.mac}}" hover-class="open">开锁</button>
+            <view data-id="{{item.propertyId}}" catchtap="open" wx:if="{{item.mac}}">{{item.mac}} </view>
+        </view>
+
+        <view class="{{isOpen & houseId==item.propertyId?'show':'hide'}}">
+            <view class='room' wx:for="{{item.rooms}}" wx:key="navItems">
+                <view>{{item.roomNumber}}</view>
+                <button class='button-open' id="{{item.mac}}" data-id="{{item.roomId}}"  data-taskCmd="{{item.task.cmd}}" data-taskStartTime="{{item.task.startTime}}" data-taskEndTime="{{item.task.endTime}}"  size="mini" hover-stay-time="1000" wx:if="{{item.mac}}" catchtap="openDoor" hover-class="open">开锁</button>
+                <view wx:if="{{item.mac}}">{{item.mac}}</view>
+            </view>
+        </view>
+    </view>
+    <view class='versions'>V1.0.2.1711</view>
+    <button class='loginOut' catchtap="loginOut">退出</button>
+</view>
+
