@@ -1,0 +1,77 @@
+/* pages/login/login.wxss */
+
+.container {
+  background: url('https://img.zelkova.cn/juoss/hd6tSEnJny.png') no-repeat bottom center;
+  background-size: 100%;
+}
+
+.container .logo-box {
+  padding-top: 114rpx;
+  text-align: center;
+}
+
+.container .logo-box .logo {
+  display: inline-block;
+  width: 240rpx;
+  height: 282rpx;
+}
+
+.container .login-form {
+  margin-top: 26rpx;
+  padding: 0 30rpx;
+  overflow: hidden;
+}
+
+.container .login-form .form-item {
+  height: 110rpx;
+  border-bottom: 1px solid #999;
+  display: flex;
+  padding: 0 12rpx;
+  padding-top: 36rpx;
+  box-sizing: border-box;
+  font-size: 34rpx;
+}
+
+.container .login-form .form-item input {
+  font-size: 34rpx;
+  flex: 1;
+}
+
+.container .login-form .form-item.in-facus {
+  border-color: #26b7bc;
+}
+
+.container .login-form .form-item .input-icon {
+  display: block;
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 50rpx;
+  position: relative;
+  top: 4rpx;
+}
+
+.container .login-form .form-item .texting {
+  color: #7f7f7f;
+  line-height: 1.6;
+  position: relative;
+}
+
+.container .login-form .form-item .texting .resend-msg {
+  color: #26b7bc;
+}
+
+.container .submit-box {
+  padding: 0 30rpx;
+  margin-top: 260rpx;
+}
+
+.container .submit-box .button {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 36rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #26b7bc;
+  border-radius: 2em;
+  overflow: hidden;
+}

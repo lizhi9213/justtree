@@ -1,0 +1,26 @@
+<!-- pages/allOrder/allOrder.wxml -->
+<topBar class='nav-wrap' barBgc='{{topBgc}}' title='全部入住单'></topBar>
+<view class="top-bg" wx:if="{{stayList.length != 0 }}"></view>
+<view class="container {{stayList.length == 0 ? '' :'has-list'}}">
+    <!-- 入住单列表 -->
+    <view class="stay-list" wx:if="{{stayList.length != 0}}">
+        <view class="stay-item {{item.stayStatus == 3 || item.stayStatus == 4 ? 'failure' : ''}}" wx:for="{{stayList}}" wx:key="{{item.id}}" bindtap="toDetail" data-id="{{item.id}}">
+            <view class="item-top-list">
+                <image class="item-icon" src="/images/icon_fangzi.png" />
+                <view class="item-num">{{item.houseNumber}}</view>
+                <text class="item-status" wx:if="{{item.stayStatus == 1}}">待入住</text>
+                <text class="item-status" wx:if="{{item.stayStatus == 2}}">入住中</text>
+                <text class="item-status" wx:if="{{item.stayStatus == 3}}">已完成</text>
+                <text class="item-status" wx:if="{{item.stayStatus == 4}}">已过期</text>
+            </view>
+            <view class="item-time-limit">{{item.timeLimit}}</view>
+            <view class="item-adress">{{item.houseAddress}}</view>
+        </view>
+    </view>
+    <!-- 没有入住单提示信息 -->
+    <view class="no-list" wx:if="{{stayList.length == 0}}">
+        <image class="no-list-icon" src="https://img.zelkova.cn/juoss/WEz6TYifMc.png" />
+        <view class="no-list-tips">亲，您还没有入住单哦~</view>
+        <view class="no-list-tips">请先和房东确认是否已创建入住单</view>
+    </view>
+</view>

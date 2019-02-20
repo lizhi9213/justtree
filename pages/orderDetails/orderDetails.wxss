@@ -1,0 +1,169 @@
+/* pages/orderDetails/orderDetails.wxss */
+.top-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    height: 600rpx;
+    background: url('https://img.zelkova.cn/juoss/kP8k35aTtK.png') top center no-repeat;
+    background-size: 100%;
+}
+
+.container {
+    padding-top: 260rpx;
+    background-color: #F1F1F5;
+}
+
+.container .detail-content {
+    position: relative;
+    z-index: 11;
+    padding: 0 20rpx;
+}
+
+.container .detail-content .card {
+    border-radius: 0.42em;
+    background-color: #fff;
+}
+
+.container .detail-content .head-card {
+    padding: 30rpx 36rpx;
+    margin-bottom: 30rpx;
+}
+
+.container .detail-content .head-card .item-top-list {
+    position: relative;
+    font-size: 28rpx;
+    padding-left: 54rpx;
+    padding-right: 128rpx;
+    margin-bottom: 30rpx;
+    font-weight: 600;
+}
+
+.container .detail-content .head-card .item-top-list .item-icon {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container .detail-content .head-card .item-top-list .item-num {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #343434;
+    padding-top: 5rpx;
+}
+
+.container .detail-content .head-card .item-time-limit {
+    width: 100%;
+    font-size: 26rpx;
+    color: #26B7BC;
+    margin-bottom: 8rpx;
+}
+
+.container .detail-content .head-card .item-adress {
+    font-size: 25rpx;
+    line-height: 46rpx;
+    color: #343434;
+}
+
+.container .detail-content .head-card .item-top-list .item-status {
+    position: absolute;
+    top: 5rpx;
+    right: 0;
+    color: #26B7BC;
+}
+
+.container .detail-content .head-card.failure .item-top-list .item-num {
+    color: #848484;
+}
+
+.container .detail-content .head-card.failure .item-top-list .item-status {
+    color: #848484;
+}
+
+.container .detail-content .head-card.failure .item-time-limit {
+    color: #848484;
+}
+
+.container .detail-content .head-card.failure .item-adress {
+    color: #848484;
+}
+
+.container .detail-content .body-card {
+    padding: 0 14rpx;
+    padding-bottom: 50rpx;
+    margin-bottom: 36rpx;
+}
+
+.container .detail-content .body-card .card-item {
+    padding: 32rpx 46rpx 20rpx 28rpx;
+    border-bottom: 1px solid #D1D1D1;
+    padding-bottom: 22rpx;
+}
+
+.container .detail-content .body-card .card-item .item-title {
+    font-size: 36rpx;
+    color: #343434;
+    font-weight: 600;
+    margin-bottom: 28rpx;
+}
+
+.container .detail-content .body-card .card-item .item-content {
+    color: #737373;
+    font-size: 26rpx;
+    line-height: 36rpx;
+}
+
+.container .detail-content .body-card .card-item .item-content .way {
+    display: inline-block;
+    margin-right: 54rpx;
+    padding-left: 26rpx;
+    position: relative;
+}
+
+.container .detail-content .body-card .card-item .item-content .way::before {
+    content: "·";
+    position: absolute;
+    font-size: 20px;
+    top: -2rpx;
+    left: 0;
+    font-weight: 700;
+}
+
+.container .detail-content .body-card .card-item .tenants-message {}
+
+
+.container .detail-content .body-card .card-item .tenants-message .line {
+    display: flex;
+    justify-content: space-between;
+    line-height: 42rpx;
+}
+
+.container .detail-content .body-card .card-item .tenants-message .line .modification {
+    flex: 1;
+    color: #26B7BC;
+    text-indent: 44rpx;
+}
+
+.container .detail-content .body-card .with-rent {
+    margin-top: 82rpx;
+    padding: 0 10rpx;
+}
+
+.container .detail-content .body-card .with-rent .button {
+    border-radius: 2em;
+    height: 88rpx;
+    background-color: #26B7BC;
+    color: #fff;
+    font-size: 36rpx;
+    text-align: center;
+    line-height: 88rpx;
+}
+
+.container .detail-content .body-card .with-rent .delete {
+    background-color: #F4413D;
+}

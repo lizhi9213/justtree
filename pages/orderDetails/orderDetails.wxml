@@ -1,0 +1,58 @@
+<!-- pages/orderDetails/orderDetails.wxml -->
+<topBar class='nav-wrap' barBgc='{{topBgc}}' title='入住单详情'></topBar>
+<view class="top-bg"></view>
+<view class="container">
+    <view class="detail-content">
+        <view class="card head-card {{orderDetail.stayStatus == 3 || orderDetail.stayStatus == 4 ? 'failure' : ''}}">
+            <view class="item-top-list">
+                <image class="item-icon" src="/images/icon_fangzi.png" />
+                <view class="item-num">{{orderDetail.houseNumber}}</view>
+                <text class="item-status" wx:if="{{orderDetail.stayStatus == 1}}">待入住</text>
+                <text class="item-status" wx:if="{{orderDetail.stayStatus == 2}}">入住中</text>
+                <text class="item-status" wx:if="{{orderDetail.stayStatus == 3}}">已完成</text>
+                <text class="item-status" wx:if="{{orderDetail.stayStatus == 4}}">已过期</text>
+            </view>
+            <view class="item-time-limit">{{orderDetail.timeLimit}}</view>
+            <view class="item-adress">入住单号：{{orderDetail.orderNo}}</view>
+        </view>
+        <view class="card body-card">
+            <view class="card-item">
+                <view class="item-title">详细地址</view>
+                <view class="item-content">{{orderDetail.houseAddress}}</view>
+            </view>
+            <view class="card-item">
+                <view class="item-title">开锁方式（{{orderDetail.lockMode.length}}）</view>
+                <view class="item-content">
+                    <view class="way" wx:for="{{orderDetail.lockMode}}" wx:key="{{index + 2.2}}">
+                        {{item}}
+                    </view>
+                </view>
+            </view>
+            <view class="card-item" wx:for="{{orderDetail.tenants}}" wx:key="{{index + 3.14}}">
+                <view class="item-title" wx:if="{{index == 0}}">租客信息（{{orderDetail.tenants.length}}）</view>
+                <view class="item-content tenants-message">
+                    <view class="line">
+                        <text>入住人：张三</text>
+                        <text style="color: #26B7BC;" wx:if="{{item.stayStatus == 1}}">待入住</text>
+                        <text style="color: #26B7BC;" wx:if="{{item.stayStatus == 2}}">入住中</text>
+                        <text style="color: #848484;" wx:if="{{item.stayStatus == 3}}">已离店</text>
+                    </view>
+                    <view class="line" wx:if="{{index == 0}}">
+                        <text>手机号：{{item.phone}}</text>
+                    </view>
+                    <view class="line" wx:else>
+                        <view>手机号：{{item.phone}}</view>
+                        <view class="modification" wx:if="{{orderDetail.stayStatus == 1 || orderDetail.stayStatus == 2}}">修改</view>
+                    </view>
+                    <view class="line" wx:if="{{index == 0}}">
+                        <text>身份证号：{{item.IdNo}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="with-rent">
+                <view class="button" wx:if="{{orderDetail.stayStatus == 1 || orderDetail.stayStatus == 2}}">添加同租人</view>
+                <view class="button delete" wx:else>删除</view>
+            </view>
+        </view>
+    </view>
+</view>

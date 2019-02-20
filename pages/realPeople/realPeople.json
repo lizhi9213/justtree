@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "topBar": "/component/topBar/topBar",
+    "i-toast": "/component/toast/index"
+  }
+}

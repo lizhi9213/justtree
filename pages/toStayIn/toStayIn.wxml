@@ -1,0 +1,27 @@
+<!-- pages/toStayIn/toStayIn.wxml -->
+<topBar class='nav-wrap' title='开门入住'></topBar>
+<view class="container">
+    <view class="unlocking">
+        <view class="lock-btn">点击开锁</view>
+        <view class="unable-lock">
+            无法开锁？试试
+            <view class="once-password" bindtap='toOneTimePassword'>一次性密码</view>
+        </view>
+    </view>
+    <view class="stay-list">
+        <view class="stay-item">
+            <image class="item-icon" src="../../images/icon_zuyueyouxiaoqi-min.png" />
+            <view class="content">
+                <view class="title">租约有效期</view>
+                <view class="body">2018-10-12 10:38 —— 2018-11-12 12:30</view>
+            </view>
+        </view>
+        <view class="stay-item">
+            <image class="item-icon" src="../../images/icon_kaisuofangshi-min.png" />
+            <view class="content">
+                <view class="title">开锁方式</view>
+                <view class="body">手机一键开锁</view>
+            </view>
+        </view>
+    </view>
+</view>

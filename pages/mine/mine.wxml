@@ -1,0 +1,24 @@
+<!-- pages/mine/mine.wxml -->
+<topBar class='nav-wrap' barBgc='{{topBgc}}' showBack='{{false}}' title='我的'></topBar>
+<view class="top-bg"></view>
+<view class='container'>
+  <view class="mine-card">
+    <view class="card-head">
+      <image class="user-photo" src="{{defaultSrc}}" />
+      <view class="head-body">
+        <view class="name">张三</view>
+        <view class="phone">178****8952</view>
+      </view>
+    </view>
+    <view class="card-item" bindtap='toAllOrder'>
+      <image class="item-icon-left" src="/images/icon_ruzhudan.png" />
+      <view class="item-content">全部入住单</view>
+      <image class="item-icon-right" src="/images/icon_cengjijiantou.png" />
+    </view>
+    <view class="card-item">
+      <image class="item-icon-left" src="/images/icon_tuichu.png" />
+      <view class="item-content">退出登录</view>
+      <image class="item-icon-right" src="/images/icon_cengjijiantou.png" />
+    </view>
+  </view>
+</view>

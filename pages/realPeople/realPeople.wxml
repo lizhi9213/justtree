@@ -1,0 +1,75 @@
+<!-- pages/realPeople/realPeople.wxml -->
+<topBar class='nav-wrap' title='实名认证'></topBar>
+<view class="container" wx:if="{{!showResult}}">
+    <view class="progress-box">
+        <view class="step {{progress >= 1 ? 'active' : ''}}">
+            <view class="point"></view>
+            <view class="text">实名认证</view>
+        </view>
+        <view class="step {{progress >= 2 ? 'active' : ''}}">
+            <view class="point"></view>
+            <view class="text">实人认证</view>
+        </view>
+        <view class="step {{progress == 3 ? 'active' : ''}}">
+            <view class="point"></view>
+            <view class="text">开门入住</view>
+        </view>
+    </view>
+    <view class="certification">
+        <view class="content" wx:if="{{progress == 1}}">
+            <view class="input-item">
+                <view class="label">姓名</view>
+                <input class="item-input" type="text" placeholder="请输入您的真实姓名" bindinput="bindNameInput" value='{{realName}}' />
+                <view class="clean" wx:if="{{realName != null}}" bindtap='clearNameValue'>
+                    <image class="icon" src="../../images/icon_clean.png" />
+                </view>
+            </view>
+            <view class="input-item">
+                <view class="label">身份证号</view>
+                <input class="item-input" type="number" placeholder="请输入您的身份证号" bindinput="bindIdCardInput" value='{{IdNumber}}' />
+                <view class="clean" wx:if="{{IdNumber != null}}" bindtap='clearNumberValue'>
+                    <image class="icon" src="../../images/icon_clean.png" />
+                </view>
+            </view>
+            <view class="stay-tips">
+                <view class="title">入住须知</view>
+                <view class="body">
+                    根据公安要求，入住人必须进行身份核验，一人一证，人证合一。如冒充他人身份或未按实际入住人数如实登记，产生的不良后果，由入住人自行承担。
+                </view>
+            </view>
+        </view>
+        <view class="content step2" wx:if="{{progress == 2}}">
+            <image class="sample-img" src="https://img.zelkova.cn/juoss/D65wDrcB6E.png" />
+            <view class="tips">
+                <view>请正对屏幕，确认面部无遮挡物后，</view>
+                <view>把脸放在圆圈内保持不动哦~</view>
+            </view>
+        </view>
+        <view class="content" wx:if="{{progress == 3}}"></view>
+    </view>
+</view>
+<view class="container" wx:if="{{showResult}}">
+    <view class="successful certi-result" wx:if="{{certiResults}}">
+        <image class="icons" src="../../images/icon_successful.png" />
+        <text style="color: #3FB579;">认证成功</text>
+    </view>
+    <view class="failed certi-result" wx:else>
+        <image class="icons" src="../../images/icon_failed.png" />
+        <text style="color: #E83434;">认证失败</text>
+        <text style="color: #333333; font-size: 36rpx; margin-top: 20rpx;">请确认是否有遮挡物或是否为本人</text>
+        <text style="color: #848484; font-size: 28rpx; margin-top: 120rpx;">
+            *提示：认证失败，请联系房东进行人工认证哦~
+        </text>
+    </view>
+</view>
+<view class="buttom-btn">
+    <view wx:if="{{!showResult}}">
+        <view wx:if="{{progress == 1}}" class="next-btn" bindtap='nextStep'>下一步</view>
+        <view wx:if="{{progress == 2}}" class="next-btn" bindtap='nextStep'>开始拍摄</view>
+    </view>
+    <view wx:if="{{showResult && !certiResults}}" class="next-btn failed-btn">
+        <view class="child-btn">添加同租人</view>
+        <view class="child-btn">重新认证</view>
+    </view>
+</view>
+<i-toast id="toast" />

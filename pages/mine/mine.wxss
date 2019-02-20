@@ -1,0 +1,83 @@
+/* pages/mine/mine.wxss */
+.top-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    height: 600rpx;
+    background: url('https://img.zelkova.cn/juoss/kP8k35aTtK.png') top center no-repeat;
+    background-size: 100%;
+}
+
+.container {
+    height: 100vh;
+    padding: 0 20rpx;
+    padding-top: 260rpx;
+    background-color: #F1F1F5;
+    overflow: hidden;
+}
+
+.container .mine-card {
+    position: relative;
+    z-index: 11;
+    background-color: #fff;
+    margin: 0 auto;
+    height: 100vh;
+    border-radius: 0.44em;
+    padding: 0 20rpx;
+}
+
+.container .mine-card .card-head {
+    padding-top: 32rpx;
+    padding-bottom: 34rpx;
+    border-bottom: 1px solid #E0E0E0;
+    display: flex;
+}
+.container .mine-card .card-head .user-photo {
+    width: 122rpx;
+    height: 122rpx;
+    border-radius: 50%;
+    margin-left: 18rpx;
+    margin-right: 36rpx;
+}
+
+.container .mine-card .card-head .head-body {
+    flex: 1;
+    padding-top: 18rpx;
+}
+
+.container .mine-card .card-head .head-body .name {
+    color: #343434;
+    font-size: 34rpx;
+    margin-bottom: 14rpx;
+}
+
+.container .mine-card .card-head .head-body .phone {
+    color: #585858;
+    font-size: 26rpx;
+}
+
+.container .mine-card .card-item {
+    padding: 26rpx 48rpx 22rpx 48rpx;
+    border-bottom: 1px solid #EAEBEC;
+    display: flex;
+    align-items: center;
+}
+.container .mine-card .card-item .item-icon-left {
+    width: 62rpx;
+    height: 62rpx;
+    border-radius: 50%;
+    margin-right: 30rpx;
+}
+
+.container .mine-card .card-item .item-content {
+    flex: 1;
+    font-size: 34rpx;
+    color: #343434;
+}
+
+.container .mine-card .card-item .item-icon-right {
+    width: 32rpx;
+    height: 32rpx;
+}

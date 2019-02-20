@@ -1,0 +1,45 @@
+<!-- index.wxml -->
+<topBar class='nav-wrap' barBgc='{{topBgc}}' showBack='{{false}}' title='入住单'></topBar>
+<view class="top-bg" wx:if="{{stayList.length != 0 }}"></view>
+<view class="container {{stayList.length == 0 ? '' :'has-list'}}">
+  <!-- 入住单列表 -->
+  <view class="stay-list" wx:if="{{stayList.length != 0}}">
+    <view class="stay-item" wx:for="{{stayList}}" wx:key="{{item.id}}">
+      <view bindtap="selectOrder" data-index="{{index}}" data-id="{{item.id}}">
+        <view class="item-top-list">
+          <image class="item-icon" src="/images/icon_fangzi.png" />
+          <view class="item-num">{{item.houseNumber}}</view>
+          <text class="item-status" wx:if="{{item.stayStatus == 1}}">待入住</text>
+          <text class="item-status" wx:if="{{item.stayStatus == 2}}">入住中</text>
+        </view>
+        <view class="item-time-limit">{{item.timeLimit}}</view>
+        <view class="item-adress">{{item.houseAddress}}</view>
+      </view>
+      <view class="stay-item-handle" wx:if="{{index == activeIndex}}">
+        <view class="to-sty-in" wx:if="{{item.stayStatus == 1}}">
+          <view class="stay-button primary" bindtap='toRealPeople'>办理入住</view>
+          <view class="stay-button">添加同租人</view>
+          <view class="handle-tips">若您没有二代身份证，请联系房东进行人工认证哦~</view>
+        </view>
+        <view class="has-been-in" wx:if="{{item.stayStatus == 2}}">
+          <view class="unlocking-btn" bindtap='toStayIn'>
+            <text>点击开锁</text>
+          </view>
+          <view class="handle-tips">
+            无法打开门锁？
+            <text wx:if="{{item.supportIdCard == 1}}">不妨试试将入住身份证插在卡槽中或使用</text>
+            <text wx:else>试试</text>
+            <view class="disposable" bindtap='toOneTimePassword'>一次性密码</view>
+            <text wx:if="{{item.supportIdCard == 1}}">开门哦~</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 没有入住单提示信息 -->
+  <view class="no-list" wx:if="{{stayList.length == 0}}">
+    <image class="no-list-icon" src="https://img.zelkova.cn/juoss/WEz6TYifMc.png" />
+    <view class="no-list-tips">亲，您还没有入住单哦~</view>
+    <view class="no-list-tips">请先和房东确认是否已创建入住单</view>
+  </view>
+</view>
